@@ -237,7 +237,7 @@ export default function Sidebar({ onLogout, user }) {
           />
           <div className={`sb-sub-list${open.users ? " open" : ""}`}>
             <SubItem to="/users/list"  label="User List"   permission="createEditUsers" />
-            <SubItem to="/users/add"   label="Add User"    permission="createEditUsers" />
+            {/* <SubItem to="/users/add"   label="Add User"    permission="createEditUsers" /> */}
             <SubItem to="/user-groups" label="User Groups" permission="createEditUsers" />
           </div>
 
@@ -250,7 +250,7 @@ export default function Sidebar({ onLogout, user }) {
           />
           <div className={`sb-sub-list${open.clients ? " open" : ""}`}>
             <SubItem to="/clients"    label="Client List"  permission="clientBranchCRUD" />
-            <SubItem to="/add-client" label="Add Client"   permission="clientBranchCRUD" />
+            
             <SubItem to="/branches"   label="Branches"     permission="clientBranchCRUD" />
           </div>
 

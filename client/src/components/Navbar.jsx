@@ -21,15 +21,15 @@ const css = `
 
   /* Search */
   .nb-search-wrap { position: relative; }
-  .nb-search {
-    display: flex; align-items: center; gap: 8px;
-    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 8px; padding: 6px 12px; width: 240px; transition: all .2s;
-  }
-  .nb-search:focus-within { border-color: rgba(61,142,240,0.5); width: 300px; background: rgba(255,255,255,0.09); }
-  .nb-search-icon { font-size: 12px; opacity: .4; flex-shrink: 0; }
-  .nb-search input { background: none; border: none; outline: none; font-size: 12.5px; color: #c8d8f0; font-family: 'DM Sans', sans-serif; width: 100%; }
-  .nb-search input::placeholder { color: #3a5070; }
+ .nb-search {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(37,99,235,0.12); border: 1px solid rgba(37,99,235,0.35);
+  border-radius: 8px; padding: 6px 12px; width: 240px; transition: all .2s;
+}
+.nb-search:focus-within { border-color: rgba(61,142,240,0.8); width: 300px; background: rgba(37,99,235,0.18); }
+.nb-search input { background: none; border: none; outline: none; font-size: 12.5px; color: #c8d8f0; font-family: 'DM Sans', sans-serif; width: 100%; }
+.nb-search input::placeholder { color: #60a5fa; }
+.nb-search-icon { font-size: 12px; opacity: .8; flex-shrink: 0; color: #60a5fa; }
 
   /* Search results dropdown */
   .nb-search-results {
@@ -378,6 +378,36 @@ export default function Navbar({ dark, onToggle, user, onLogout }) {
             </span>
           ))}
         </div>
+
+          <div style={{
+    flex: 1,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+  }}>
+    <div style={{
+      width: 28, height: 28, borderRadius: "50%",
+      background: "linear-gradient(135deg,#2563eb,#3d8ef0)",
+      display: "flex", alignItems: "center", justifyContent: "center",
+      fontSize: 11, fontWeight: 700, color: "#fff", flexShrink: 0,
+    }}>
+      {initials}
+    </div>
+    <span style={{
+      fontSize: 13, fontWeight: 700, color: "#c8d8f0",
+      letterSpacing: "0.3px",
+    }}>
+      {user?.fullName || "User"}
+    </span>
+    <span style={{
+      fontSize: 9, fontWeight: 700,
+      background: "rgba(37,99,235,0.2)", border: "1px solid rgba(37,99,235,0.3)",
+      color: "#60a5fa", padding: "2px 7px", borderRadius: 4,
+    }}>
+      {user?.role}
+    </span>
+  </div>
 
         {/* ── Live Search ── */}
         <div className="nb-search-wrap" ref={searchRef}>

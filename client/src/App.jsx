@@ -8,7 +8,7 @@ import { can } from "./config/permissions";
 
 import Dashboard      from "./pages/Dashboard";
 import ClientList     from "./pages/ClientList";
-import AddClient      from "./pages/AddClient";
+
 import ClientMaster   from "./pages/ClientMaster";
 import Branches       from "./pages/Branches";
 import CustomerMaster from "./pages/Customermaster";
@@ -17,6 +17,8 @@ import ImageUpload    from "./pages/ImageUpload";
 import ImageView      from "./pages/ImageView";
 import UserList       from "./pages/UserList";
 import UserGroups     from "./pages/UserGroups";
+import UploadLog      from "./pages/Uploadlog";
+import AuditLog       from "./pages/Auditlog";
 
 // Session timeout = 8 hours (matches JWT expiry)
 const SESSION_TIMEOUT_MS  = 8 * 60 * 60 * 1000;
@@ -354,7 +356,7 @@ export default function App() {
 
               {/* Client/Branch — Admin only */}
               <Route path="/clients"       element={<Guard role={role} permission="clientBranchCRUD"><ClientList /></Guard>} />
-              <Route path="/add-client"    element={<Guard role={role} permission="clientBranchCRUD"><AddClient /></Guard>} />
+              
               <Route path="/client-master" element={<Guard role={role} permission="clientBranchCRUD"><ClientMaster /></Guard>} />
               <Route path="/branches"      element={<Guard role={role} permission="clientBranchCRUD"><Branches /></Guard>} />
 
@@ -376,8 +378,8 @@ export default function App() {
               <Route path="/user-groups"  element={<Guard role={role} permission="createEditUsers"><UserGroups /></Guard>} />
 
               {/* Reports — Admin, Manager, Officer, Viewer */}
-              <Route path="/upload-log" element={<Guard role={role} permission="viewReports"><Dashboard /></Guard>} />
-              <Route path="/audit-log"  element={<Guard role={role} permission="viewReports"><Dashboard /></Guard>} />
+              <Route path="/upload-log" element={<Guard role={role} permission="viewReports"><UploadLog /></Guard>} />
+<Route path="/audit-log"  element={<Guard role={role} permission="createEditUsers"><AuditLog /></Guard>} />
 
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>

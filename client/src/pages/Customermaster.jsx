@@ -576,7 +576,7 @@ function CustomerFormModal({ customer, clients, branches, onSave, onClose }) {
           <div className="form-grid">
 
             {/* ── Basic Info ── */}
-            <div className="form-section-title">Basic Information</div>
+            {/* //<div className="form-section-title">Basic Information</div> */}
 
 <div className="form-section-title">Basic Information</div>
 
@@ -648,10 +648,10 @@ function CustomerFormModal({ customer, clients, branches, onSave, onClose }) {
               </div>
             )}
 
-            <div className={`form-group${isEdit ? "" : " full"}`}>
+            {/* <div className={`form-group${isEdit ? "" : " full"}`}>
               <label className="form-label">Full Name <span className="req">*</span></label>
               <input className="form-input" placeholder="Customer full name" value={form.name} onChange={e => set("name", e.target.value)} />
-            </div>
+            </div> */}
 
             <div className="form-group">
               <label className="form-label">Mobile <span className="req">*</span></label>
