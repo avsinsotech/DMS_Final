@@ -1,6 +1,0 @@
-/* index.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Root variables are defined in App.jsx appCss — do not add :root here */
